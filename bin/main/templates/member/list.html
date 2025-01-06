@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>회원목록</h1>
+	<a href="/member/insert">회원 추가</a>
+	<br><br>
+	<table border="1">
+		<tr>
+			<th>번호</th><th>이름</th><th>주소</th><th>수정/삭제</th>
+		</tr>
+		<tr th:each="mem : ${list}">
+			<td>[[${mem.num}]]</td>
+<!-- 			<td>[[${memStat.index + 1}]]</td> -->
+			<td>[[${mem.name}]]</td>
+			<td>[[${mem.addr}]]</td>
+			<td>
+				<a href="/member/update=@{/member/update(num=${mem.num})}">수정</a>
+				<a href="">삭제</a>
+			</td>
+		</tr>
+	</table>
+	<br><br>
+	<a href="/">메인으로</a>
+</body>
+</html>

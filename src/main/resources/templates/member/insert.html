@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>회원입력</h1>
+	<form method="post" action="/member/insert">
+		이름 : <input type="text" name="name"/><br>
+		주소 : <input type="text" name="addr"/><br>
+		<button>등록</button>
+	</form>
+	<div th:if="${message}">
+		<p th:text="${message}" style="color:red"></p>
+	</div>
+</body>
+</html>
